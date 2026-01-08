@@ -1,0 +1,17 @@
+<h2>ADMIN PANEL</h2>
+<p>Meta Tech Hosting Web – Developer Shazam</p>
+
+<button onclick="loadUsers()">Load Users</button>
+<pre id="output"></pre>
+
+<br>
+<a href="/logout">Logout</a>
+
+<script>
+async function loadUsers() {
+  const res = await fetch("/admin/users");
+  const data = await res.json();
+  document.getElementById("output").textContent =
+    JSON.stringify(data, null, 2);
+}
+</script>
